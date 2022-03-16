@@ -3,25 +3,34 @@ import { Link } from "react-router-dom";
 import "./Navbar.css";
 import * as PATHS from "../../utils/paths";
 import * as CONSTS from "../../utils/consts";
-import {Flight,Hotel} from '@material-ui/icons';
+
 const Navbar = (props) => {
   return (
     <nav>
       <Link to={PATHS.HOMEPAGE} className="nav__projectName">
         {CONSTS.CAPITALIZED_APP}
       </Link>
-      <Link to={PATHS.FLIGHTS} className="authLink">
-              Flights <Flight/>
-            </Link>
-            <Link to={PATHS.HOTELS} className="authLink">
-              Hotels <Hotel/>
-            </Link>
+      
       <div className="nav__authLinks">
+
+      <Link to={PATHS.TECHNEWS} className="authLink">
+      Tech News 
+            </Link>
+
+            <Link to={PATHS.EXPLORE} className="authLink">
+              Explore Devs 
+            </Link>
+
+            <Link to={PATHS.MAPTOMEET} className="authLink">
+              Map2Meet 
+            </Link>
+
         {props.user ? (
           <>
             <Link to={PATHS.PROTECTEDPAGE} className="authLink">
               Profile
             </Link>
+            
             <button className="nav-logoutbtn" onClick={props.handleLogout}>
               Logout
             </button>

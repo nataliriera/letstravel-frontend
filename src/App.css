@@ -2,6 +2,13 @@
   text-align: center;
 }
 
+body{
+  background: url(../src/assets/background.jpg);
+  background-size: cover ;
+  background-repeat: no-repeat;
+  height: 100vh;
+}
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;

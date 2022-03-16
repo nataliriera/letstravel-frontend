@@ -67,6 +67,7 @@ import {getpin} from "../../services/pinService";
 
 function PinMap() {
   const [pins, setPins] = useState([]);
+  // const [currentPlaceId, setCurrentPlaceId] = useState(null);
     const [viewport, setViewport] = useState({
       latitude: 25.7617,
       longitude: -80.1918,
@@ -77,7 +78,7 @@ function PinMap() {
       const getPins = async () => {
           try{
             const allPins = await getpin();
-            // setPins(allPins.data);
+            setPins(allPins.data);
             console.log(allPins)
           }catch(err){
             console.log(err);
@@ -104,30 +105,32 @@ function PinMap() {
       mapLib={maplibregl}
       style={{width: "100vw", height: "100vh"}}
       mapStyle="https://basemaps.cartocdn.com/gl/positron-gl-style/style.json"
+      onViewportChange={(viewport) => setViewport(viewport)}
     >
       {/* {pins.map((p)=>( */}
 
-      
+      {/* <> */}
       <Marker 
-      longitude={2.294694} 
-      latitude={48.858093}
+      longitude={-80.1918} 
+      latitude={25.7617}
       offsetLeft={-20}
       offsetTop={-10} 
       >
-        <Room style={{fontSize:viewport.zoom * 7, color:'slateblue'}}/>
+        <Room style={{fontSize:viewport.zoom * 7, color:'slateblue'}}
+        />
         </Marker>
         <Popup
-        latitude={48.858093}
-        longitude={2.294694}
+        latitude={25.7617}
+        longitude={-80.1918} 
         closeButton={true}
         closeOnClick={false}
         anchor="left"
         >
            <div className='card'>
            <label>Place</label>
-           <h4 className='place'> Eifell tower</h4>
+           <h4 className='place'> title</h4>
              <label>Review</label>
-             <p className='desc'>beautiful</p>
+             <p className='desc'>desc</p>
              <label>Rating</label>
              <div className='stars'>
              <Star className='star'/>
@@ -141,7 +144,10 @@ function PinMap() {
            </div>
           
         </Popup> 
+        {/* </> */}
+        {/* ))} */}
     </Map>
+
   );
 }
 

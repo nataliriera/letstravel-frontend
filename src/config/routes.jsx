@@ -2,9 +2,10 @@ import { Navigate } from "react-router-dom";
 import HomePage from "../pages/HomePage";
 import Login from "../pages/LogIn";
 import Signup from "../pages/Signup";
-import Flights from "../pages/Flights"
+import TechNews from "../pages/TechNews"
 import ProtectedPage from "../pages/ProtectedPage";
-import Hotels from "../pages/Hotels";
+import Explore from "../pages/Explore";
+import MaptoMeet from "../pages/MaptoMeet";
 import * as PATHS from "../utils/paths";
 
 const routes = (props) => {
@@ -19,12 +20,16 @@ const routes = (props) => {
       element: <Signup {...props} />,
     },
     {
-      path: PATHS.FLIGHTS,
-      element: <Flights {...props} />,
+      path: PATHS.TECHNEWS,
+      element: <TechNews {...props} />,
     },
     {
-      path: PATHS.HOTELS,
-      element: <Hotels {...props} />,
+      path: PATHS.EXPLORE,
+      element: <Explore {...props} />,
+    },
+    {
+      path: PATHS.MAPTOMEET,
+      element: <MaptoMeet {...props} />,
     },
     {
       path: PATHS.LOGINPAGE,
