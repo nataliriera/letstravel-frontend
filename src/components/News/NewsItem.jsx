@@ -9,7 +9,7 @@ const NewsItem = ({ title, description, url, urlToImage,author,publishedAt}) => 
     return (
         <div className="news-app">
           
-        <Card className='news-item' sx={{ maxWidth: 345 }}>
+        <Card className='news-item' sx={{ maxWidth: 345 }} style={{backgroundColor:'#1E1E1E'}}>
         
         <CardMedia className='news-img'
         component="img"
@@ -18,23 +18,23 @@ const NewsItem = ({ title, description, url, urlToImage,author,publishedAt}) => 
         image={urlToImage}
         />
         
-        <CardContent>
+        <CardContent className='news-content'>
         
-        <Typography gutterBottom variant="h5" component="div">
+        <Typography gutterBottom variant="h4" component="div">
         {title}
         </Typography>
         
-        <Typography variant="body2" color="text.secondary">
+        <Typography variant="subtitle1" color="text.secondary">
         {description}
         </Typography>
         
       </CardContent>
       
-        <CardActions>
+        <CardActions className='news-actions'>
             <a href= {url} target="_blank">
             <Button size="small" >Learn More</Button>
             </a>
-            <Typography variant="body2" color="text.secondary">
+            <Typography variant="body1" color="text.secondary">
         Author: {author}
         </Typography>
         <Typography variant="body2" color="text.secondary">

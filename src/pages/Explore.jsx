@@ -1,5 +1,5 @@
 import React from 'react'
-import axios from "axios";
+import MemberList from "../components/Members/MemberList";
 
 
 const Explore = () => {
@@ -9,7 +9,9 @@ const Explore = () => {
   
 
   return (
-    <div>Explore Page</div>
+    <>
+    <MemberList/>
+    </>
   )
 }
 
