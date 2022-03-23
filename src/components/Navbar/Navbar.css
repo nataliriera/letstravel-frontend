@@ -3,7 +3,7 @@ nav {
   padding: 1em;
   justify-content: space-between;
   flex-wrap: wrap;
-  background: rgb(109,174,250, .3);
+  /* background: rgb(109,174,250, .3); */
   font-weight: 500;
 }
 
@@ -16,6 +16,7 @@ nav {
   color: whitesmoke;
   text-decoration: none;
   transition: color 0.2s ease-in-out;
+  text-shadow: 3px 4px 3px rgba(8, 0, 0, 0.65);
 }
 
 .authLink + .authLink {
@@ -23,7 +24,7 @@ nav {
 }
 
 .authLink:hover {
-  color: #F97AAF;
+  color: #CE4EC9;
 }
 
 .nav-logoutbtn {
