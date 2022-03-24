@@ -1,13 +1,11 @@
+
+   
 import React, { useState } from "react";
 import { login } from "../services/auth";
 import { useNavigate } from "react-router-dom";
 import "./Signup";
 import * as PATHS from "../utils/paths";
 import * as USER_HELPERS from "../utils/userToken";
-import { TextField, Box, Button } from "@material-ui/core";
-import "./auth.css";
-
-
 
 export default function LogIn({ authenticate }) {
   const [form, setForm] = useState({
@@ -41,28 +39,12 @@ export default function LogIn({ authenticate }) {
   }
 
   return (
-    <div className="signupBox">
-
-<Box
-
-      component="form"
-      sx={{
-        marginTop: 8,
-        display: 'flex',
-        flexDirection: 'column',
-        alignItems: 'center',
-        '& .MuiTextField-root': { m: 1, width: '25ch' },
-      }}
-      noValidate
-      autoComplete="off"
-      
-    >
-      
+    <div>
       <h1>Log In</h1>
-      <form onSubmit={handleFormSubmission} className="signup__form">
-        <TextField
-          label="Username"
-          id="outlined-multiline-flexible"
+      <form onSubmit={handleFormSubmission} className="auth__form">
+        <label htmlFor="input-username">Username</label>
+        <input
+          id="input-username"
           type="text"
           name="username"
           placeholder="username"
@@ -71,9 +53,9 @@ export default function LogIn({ authenticate }) {
           required
         />
 
-        <TextField
-          label="Password"
-          id="outlined-multiline-flexible"
+        <label htmlFor="input-password">Password</label>
+        <input
+          id="input-password"
           type="password"
           name="password"
           placeholder="Password"
@@ -89,13 +71,11 @@ export default function LogIn({ authenticate }) {
             <p>{error.message}</p>
           </div>
         )}
-<div className="login-button">
-<Button variant="contained" type="submit" style={{backgroundColor:"#2E227C", color:"white"}}>
-          Sign In
-        </Button>
-        </div>
+
+        <button className="button__submit" type="submit">
+          Submit
+        </button>
       </form>
-      </Box>
     </div>
   );
 }
