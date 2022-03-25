@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import Map, { Marker, Popup } from "react-map-gl";
+import Map, { Marker, Popup } from "!react-map-gl"; // eslint-disable-line import/no-webpack-loader-syntax
 import { getpin } from "../../services/pinService";
 import { Room } from "@material-ui/icons";
 import "./map.css";
