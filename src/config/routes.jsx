@@ -2,11 +2,11 @@ import { Navigate } from "react-router-dom";
 import HomePage from "../pages/HomePage";
 import Login from "../pages/LogIn";
 import Signup from "../pages/Signup";
-import TechNews from "../pages/TechNews"
+import TechNews from "../pages/TechNews";
 import ProtectedPage from "../pages/ProtectedPage";
 import Explore from "../pages/Explore";
 import MaptoMeet from "../pages/MaptoMeet";
-import  CreateEvent  from "../pages/CreateEvent";
+import CreateEvent from "../pages/CreateEvent";
 import * as PATHS from "../utils/paths";
 
 const routes = (props) => {

@@ -1,39 +1,32 @@
 import axios from "axios";
 
 function internalServerError(err) {
-    if (err.response && err.response.data && err.response.data.errorMessage) {
-      return {
-        status: false,
-        errorMessage: err.response.data.errorMessage,
-      };
-    }
+  if (err.response && err.response.data && err.response.data.errorMessage) {
     return {
       status: false,
-      errorMessage: "Internal server error. Please check your server",
+      errorMessage: err.response.data.errorMessage,
     };
   }
-  
-  function successStatus(res) {
-    return {
-      status: true,
-      data: res.data,
-    };
-  }
+  return {
+    status: false,
+    errorMessage: "Internal server error. Please check your server",
+  };
+}
 
-  const pinService = axios.create({
-    baseURL: `${process.env.REACT_APP_SERVER_URL}/pins`,
-  });
+function successStatus(res) {
+  return {
+    status: true,
+    data: res.data,
+  };
+}
 
-  export function getpin() {
-    return pinService
-      .get("/getpin")
-      .then(successStatus)
-      .catch(internalServerError);
-  }
+const pinService = axios.create({
+  baseURL: `${process.env.REACT_APP_SERVER_URL}/pins`,
+});
 
-  // export function createpin(credentials) {
-  //   return pinService
-  //     .post("/createpin", credentials)
-  //     .then(successStatus)
-  //     .catch(internalServerError);
-  // }
+export function getpin() {
+  return pinService
+    .get("/getpin")
+    .then(successStatus)
+    .catch(internalServerError);
+}

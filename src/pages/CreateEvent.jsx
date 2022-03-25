@@ -119,7 +119,6 @@ export default function CreateEvent() {
           value={form.long}
           onChange={(e) => updateForm({ long: e.target.value })}
         />
-    
 
         <button className="button__submit" type="submit">
           Submit

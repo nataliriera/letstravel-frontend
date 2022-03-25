@@ -1,18 +1,12 @@
-import React from 'react'
+import React from "react";
 import MemberList from "../components/Members/MemberList";
 
-
 const Explore = () => {
-   
-
-
-  
-
   return (
     <>
-    <MemberList/>
+      <MemberList />
     </>
-  )
-}
+  );
+};
 
-export default Explore
+export default Explore;

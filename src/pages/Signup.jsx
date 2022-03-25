@@ -5,7 +5,6 @@ import "./auth.css";
 import * as PATHS from "../utils/paths";
 import * as USER_HELPERS from "../utils/userToken";
 
-
 export default function Signup({ authenticate }) {
   const [form, setForm] = useState({
     email: "",
@@ -17,10 +16,18 @@ export default function Signup({ authenticate }) {
     about: "",
     github: "",
     linked_in: "",
-  
-
   });
-  const { email, username, password, job_title, skills, location, about, linked_in, github} = form;
+  const {
+    email,
+    username,
+    password,
+    job_title,
+    skills,
+    location,
+    about,
+    linked_in,
+    github,
+  } = form;
   const [error, setError] = useState(null);
   const navigate = useNavigate();
 
@@ -41,7 +48,6 @@ export default function Signup({ authenticate }) {
       about,
       linked_in,
       github,
-    
     };
     signup(credentials).then((res) => {
       if (!res.status) {
@@ -57,11 +63,10 @@ export default function Signup({ authenticate }) {
       navigate(PATHS.HOMEPAGE);
     });
   }
-  
 
   return (
     <div>
-      <h1>Let's Get Started  🎉 </h1>
+      <h1>Let's Get Started 🎉 </h1>
       <form onSubmit={handleFormSubmission} className="auth__form">
         <label htmlFor="input-username">Username</label>
         <input
@@ -73,8 +78,8 @@ export default function Signup({ authenticate }) {
           onChange={handleInputChange}
           required
         />
-           <label htmlFor="input-email">Email</label>
-         <input
+        <label htmlFor="input-email">Email</label>
+        <input
           id="input-email"
           type="text"
           name="email"
@@ -84,8 +89,8 @@ export default function Signup({ authenticate }) {
           required
         />
 
-<label htmlFor="input-job_title">Job Title</label>
-         <input
+        <label htmlFor="input-job_title">Job Title</label>
+        <input
           id="input-job_title"
           type="text"
           name="job_title"
@@ -95,8 +100,8 @@ export default function Signup({ authenticate }) {
           required
         />
 
-<label htmlFor="input-skills">Skills</label>
-         <input
+        <label htmlFor="input-skills">Skills</label>
+        <input
           id="input-skills"
           type="text"
           name="skills"
@@ -106,8 +111,8 @@ export default function Signup({ authenticate }) {
           required
         />
 
-<label htmlFor="input-location">Location</label>
-         <input
+        <label htmlFor="input-location">Location</label>
+        <input
           id="input-location"
           type="text"
           name="location"
@@ -117,8 +122,8 @@ export default function Signup({ authenticate }) {
           required
         />
 
-<label htmlFor="input-about">About Me</label>
-         <textarea
+        <label htmlFor="input-about">About Me</label>
+        <textarea
           id="input-about"
           type="text"
           name="about"
@@ -128,8 +133,8 @@ export default function Signup({ authenticate }) {
           required
         />
 
-<label htmlFor="input-linked_in">Linked In</label>
-         <input
+        <label htmlFor="input-linked_in">Linked In</label>
+        <input
           id="input-linked_in"
           type="text"
           name="linked_in"
@@ -139,8 +144,8 @@ export default function Signup({ authenticate }) {
           required
         />
 
-<label htmlFor="input-github">Git Hub</label>
-         <input
+        <label htmlFor="input-github">Git Hub</label>
+        <input
           id="input-github"
           type="text"
           name="github"
@@ -149,9 +154,6 @@ export default function Signup({ authenticate }) {
           onChange={handleInputChange}
           required
         />
-
-
-
 
         <label htmlFor="input-password">Password</label>
         <input

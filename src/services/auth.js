@@ -52,7 +52,6 @@ export function signup(credentials) {
     .catch(internalServerError);
 }
 
-
 export function logout() {
   return authService
     .delete("/logout", {
@@ -63,4 +62,3 @@ export function logout() {
     .then(successStatus)
     .catch(internalServerError);
 }
-
