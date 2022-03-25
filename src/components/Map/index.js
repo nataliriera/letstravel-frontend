@@ -8,13 +8,14 @@ import { Room } from "@material-ui/icons";
 
 
 function PinMap() {
-    const [showPopup, setShowPopup] = React.useState(true)
     const [viewport, setViewport] = useState({
         latitude: 47.040182,
         longitude: 17.071727,
         zoom: 4,
       });
+    const [currentPlaceId, setCurrentPlaceId] = useState(null);
     const [pins, setPins] = useState([])
+
   
 
     useEffect(() => {
@@ -26,7 +27,9 @@ function PinMap() {
 
         getData()
     }, [])
-
+ const handleMarkerClick = (id)=>{
+     setCurrentPlaceId(id)
+ };
 
     return (
     
@@ -50,12 +53,15 @@ function PinMap() {
                 fontSize: 7 * viewport.zoom,
                 color: "tomato",
                 cursor: "pointer",
-                    }}
-              />
+            }}
+                onClick= {() => handleMarkerClick(pin._id)}
+                    
+            />
+
+{pin._id === currentPlaceId && (
         <Popup 
             longitude={pin.long} latitude={pin.lat}
             anchor="left"
-            onClose={() => setShowPopup(false)}
             >
                 <label>Event: {pin.title}</label>
                 <br/>
@@ -65,16 +71,12 @@ function PinMap() {
             <label>{pin.date}</label>
             <p>From: {pin.time}</p>
         </Popup>
+        )}
     </Marker>
-
-
-
 
     
     </> 
                 )
-                  
-                          
             })} 
 
   </Map>
