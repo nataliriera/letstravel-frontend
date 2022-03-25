@@ -5,3 +5,4 @@ export const PROTECTEDPAGE = "/protected";
 export const TECHNEWS = "/technews";
 export const EXPLORE = "/explore";
 export const MAPTOMEET = '/maptomeet'
+export const CREATEEVENT ='/createevent'

@@ -6,6 +6,7 @@ import TechNews from "../pages/TechNews"
 import ProtectedPage from "../pages/ProtectedPage";
 import Explore from "../pages/Explore";
 import MaptoMeet from "../pages/MaptoMeet";
+import  CreateEvent  from "../pages/CreateEvent";
 import * as PATHS from "../utils/paths";
 
 const routes = (props) => {
@@ -30,6 +31,10 @@ const routes = (props) => {
     {
       path: PATHS.MAPTOMEET,
       element: <MaptoMeet {...props} />,
+    },
+    {
+      path: PATHS.CREATEEVENT,
+      element: <CreateEvent {...props} />,
     },
     {
       path: PATHS.LOGINPAGE,

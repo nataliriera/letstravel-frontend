@@ -4,6 +4,7 @@ import React, { useEffect, useState } from 'react';
 import Map, {Marker, Popup} from 'react-map-gl';
 import {getpin} from '../../services/pinService'
 import { Room } from "@material-ui/icons";
+import "./map.css";
 
 
 
@@ -32,14 +33,16 @@ function PinMap() {
  };
 
     return (
-    
+        <>
+        <div className='map-page'>
+        
     <Map
     initialViewState={{
       longitude: -100,
-      latitude: 40,
+      latitude: 30,
       zoom: 3.5
     }}
-    style={{width: '100vw', height: '100vh'}}
+    style={{width: '65vw', height: '80vh', marginLeft:"5rem", borderRadius:"10px"}}
     mapStyle="mapbox://styles/mapbox/streets-v9"
     mapboxAccessToken="pk.eyJ1IjoibmF0eXJpZXJhMTkiLCJhIjoiY2wxMWtuN2dhMDI0bTNjcHdyNXZ2ZjhkcSJ9.randfMZz9C1NXlusbHvTIQ"
   >
@@ -78,8 +81,59 @@ function PinMap() {
     </> 
                 )
             })} 
-
+ 
   </Map>
+<>
+  <div className='all-cards'>
+  <a href='/createevent'>
+        <button className="button__map"> Create Event</button>
+    </a>
+  {pins?.map(pin => {
+                return(
+                    
+        <div className='events-list'>
+           
+    {
+        <>
+
+        <div className='event-cards'>
+        <h3>{pin.title}</h3>
+        <label>Event: {pin.title}</label>
+        <br/>
+        <p>{pin.desc}</p>
+        <label>{pin.address}</label>
+        <br/>
+        <label>{pin.date}</label>
+        <p>From: {pin.time}</p>
+        </div>
+
+        
+        </>
+        
+}
+
+</div> 
+
+
+                )
+                
+            })} 
+   
+  </div>
+  
+  </>
+  {/* <a href="#demo">
+  <div className="box">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</a> */}
+</div>
+
+</>
     )}
+    
+
 export default PinMap;
 

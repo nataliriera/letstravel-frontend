@@ -1,3 +1,98 @@
 .sidebar{
     margin-top: 60px;
 }
+
+.button__map{
+    width: 100px;
+  height: 30px;
+  margin: 1em auto;
+  background-color: #6AA7F3;
+  color: white;
+  border-style: none;
+  border-radius: 30px;
+  cursor: pointer;
+}
+
+.button__map:hover {
+    transform: scale(1.01, 1.01);
+    box-shadow: 0px 0px 17px 8px rgba(255, 4, 213, 1); 
+  }
+
+  .map-page{
+    display: flex;
+    
+
+  }
+
+  .event-cards{
+    background-color: #1E1E1E;
+    width: 20rem;
+    height: 20rem;
+    padding: 20px;
+    border-radius: 30px;
+    color: whitesmoke;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    flex-wrap: wrap;
+    margin: 3rem;
+    box-shadow: 0px 0px 17px 8px rgb(133, 130, 133); 
+
+   
+  }
+
+  .event-cards p{
+    color: whitesmoke;
+  }
+
+  .event-cards label{
+    color: rgba(255, 4, 213, 1);
+  }
+
+  .event-cards:hover {
+    transform: scale(1.01, 1.01);
+    box-shadow: 0px 0px 17px 8px rgba(255, 4, 213, 1); 
+    
+}
+
+  .all-cards{
+    height: 75vh;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
+    overflow-y: scroll;
+  }
+
+  .box span {
+    width: 2.7rem;
+    height: 2.7rem;
+    display: block;
+    border-right: 2px solid rgb(108,170,245);
+    border-bottom: 2px solid rgb(108,170,245);
+    box-shadow: 5px 5px 3px -3px rgb(255, 0, 212);
+    transform: rotate(45deg);
+    margin: -10px;
+    animation: animate 2s infinite;
+}
+
+.box span:nth-child(2) {
+    animation-delay: -0.2s;
+}
+
+.box span:nth-child(3) {
+    animation-delay: -0.4s;
+}
+
+@keyframes animate {
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+        transform: rotate(45deg) translate(10px, 10px);
+    }
+    100% {
+        opacity: 0;
+    }
+}
