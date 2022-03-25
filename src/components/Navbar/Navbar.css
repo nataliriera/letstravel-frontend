@@ -47,3 +47,9 @@ nav {
   transform: scale(1.05);
   background-color: #d13e3e;
 }
+
+#nav-logo{
+ height:10rem;
+ margin: -2rem;
+ padding: 0;
+}

@@ -1,5 +1,7 @@
 import React, {useState} from "react";
 import {editUser, uploadImage} from "../services/users"
+import {GitHub, LinkedIn} from '@material-ui/icons'
+import GitHubCalendar from 'react-github-calendar';
 
 
 const ProtectedPage = (props) => {
@@ -13,7 +15,7 @@ function handleInputChange(event) {
 
 const uploadPic = async (e)=>{
   try{
-    const image = {doc:e.target}
+    // const image = {doc:e.target}
     const formData = new FormData(); 
 
     formData.append("doc", e.target.files[0])
@@ -37,25 +39,80 @@ function handleFormSubmission(event) {
      console.log("error",error)
   })
 }
-
+const colourTheme = {
+  background: 'red',
+  text: '#BDC1D3',
+  grade4: '#64dfdf',
+  grade3: '#0baaaa',
+  grade2: '#06cece',
+  grade1: '#08cccc',
+  grade0: '#e5e5e5',
+};
   return (
+
+    
     !isedit ?
     <>
-    <div>
-      <img src={props.user.profile_pic} width="100" height="100"/>
-      <h1>Hello 👋 , <br/> {props.user.username}</h1>
-      <h3>{props.user.job_title} <br/>{props.user.location}</h3>
+  <div className="member-app">
+
+
+<div class="container">
+<div class="user-box">
+<div class="card-header">
+  
+  <div class="img">
+    <div class="inner-img">
+      <img src={props.user.profile_pic} alt="" class="img-profile"/>
     </div>
-  <div>
-  <h2>My Favorite Tech Skills:</h2>
-    <h4>{props.user.skills}</h4>
-    <h2>About Me:</h2>
-    <h4>{props.user.about}</h4>
   </div>
-  <button onClick={()=> setIsedit(true)} className="button__submit">Edit Profile</button>
+  <div class="desc">
+    <h3>{props.user.username}</h3>
+    <h5>{props.user.job_title}</h5>
+    <h5>{props.user.location}</h5>
+    <p>{props.user.about}</p>
+  </div>
+  
+  <div class="buttons">
+
+
+    <a href={`https://github.com/${props.user.github}`} target="_blank" rel="noreferrer" class="btn btn-bordered">
+      <GitHub/>
+    </a>
+
+    <a href= {`https://www.linkedin.com/in/${props.user.linked_in}`} target="_blank" rel="noreferrer" class="btn btn-bordered">
+      <LinkedIn/>
+    </a>
+  </div>
+</div>
+
+<div class="card-footer">
+  <h5>Skills</h5>
+  <a href="#" class="tags">{props.user.skills}</a>
  
+</div>
+<h3 >
+    {props.user.username}'s GitHub Tracker
+    </h3>
+    <GitHubCalendar
+    username={props.user.github}
+    blockSize={15}
+    blockMargin={5}
+    theme={colourTheme}
+    fontSize={16}
+  />
+</div>
+</div>  
+</div>
+
+<button onClick={()=> setIsedit(true)} className="button__submit">Edit Profile</button>
+
   </>
+
+
+
   :
+
+
   <>
   <h1>Edit User</h1>
 

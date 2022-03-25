@@ -32,6 +32,8 @@ const MemberList = () => {
                         about={member.about}
                         linked_in={member.linked_in}
                         github={member.github}
+                        profile_pic={member.profile_pic}
+                        email={member.email}
                        
                     />
                 )

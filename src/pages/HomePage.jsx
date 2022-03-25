@@ -19,7 +19,7 @@ function HomePage() {
 
   <div className="landing-right">
     <div>
-  <img src={landing}/>   
+  <img src={landing} alt="landingpage-pic"/>   
   </div>
   </div>
   </section>  
