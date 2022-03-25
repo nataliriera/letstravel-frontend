@@ -1,3 +1,5 @@
+
+   
 import React, { useState } from "react";
 import { login } from "../services/auth";
 import { useNavigate } from "react-router-dom";
@@ -39,7 +41,7 @@ export default function LogIn({ authenticate }) {
   return (
     <div>
       <h1>Log In</h1>
-      <form onSubmit={handleFormSubmission} className="signup__form">
+      <form onSubmit={handleFormSubmission} className="auth__form">
         <label htmlFor="input-username">Username</label>
         <input
           id="input-username"
