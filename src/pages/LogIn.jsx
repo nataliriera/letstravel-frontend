@@ -40,7 +40,7 @@ export default function LogIn({ authenticate }) {
 
   return (
     <div>
-      <h1>Log In</h1>
+      <h1>Welcome Back!! ✋ </h1>
       <form onSubmit={handleFormSubmission} className="auth__form">
         <label htmlFor="input-username">Username</label>
         <input

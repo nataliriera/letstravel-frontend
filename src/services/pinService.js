@@ -30,3 +30,10 @@ function internalServerError(err) {
       .then(successStatus)
       .catch(internalServerError);
   }
+
+  // export function createpin(credentials) {
+  //   return pinService
+  //     .post("/createpin", credentials)
+  //     .then(successStatus)
+  //     .catch(internalServerError);
+  // }
