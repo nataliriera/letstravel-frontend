@@ -124,7 +124,7 @@ const ProtectedPage = (props) => {
           name="profile_pic"
           placeholder="Avatar"
           onChange={uploadPic}
-          required
+          
         />
 
         <label htmlFor="input-username">Username</label>
