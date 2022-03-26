@@ -42,6 +42,17 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser. T
   
   ```
   
+  ## Environment Variables
+
+To run this project, you will need to add the following environment variables to your .env file
+
+```
+REACT_APP_SERVER_URL=http://localhost:5005/api
+REACT_APP_mapbox_key=<your_key>
+news_key = <your_key>
+
+```
+  
 ## Demo
 
   ![ezgif com-gif-maker](https://user-images.githubusercontent.com/67808802/160224599-083ca008-10f9-4c26-a662-e521cf470d26.gif)
