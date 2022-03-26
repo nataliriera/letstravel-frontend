@@ -4,17 +4,18 @@ import "./memberitems.css";
 import { getMembers } from "../../services/users";
 
 const MemberList = () => {
-  const [members, setMemberss] = useState([]);
+  const [members, setMembers] = useState([]);
 
   useEffect(() => {
     const getData = async () => {
       const response = await getMembers();
-      setMemberss(response.data.result);
-      console.log(response);
+      setMembers(response.data.result);
     };
 
     getData();
   }, []);
+
+  
   return (
     <div className="member-list-outer-div">
       <div className="member-list">

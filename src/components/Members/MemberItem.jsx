@@ -25,31 +25,31 @@ const MemberItem = ({
   };
   return (
     <div className="member-app">
-      <div class="container">
-        <div class="user-box">
-          <div class="card-header">
-            <div class="img">
-              <div class="inner-img">
+      <div className="container">
+        <div className="user-box">
+          <div className="card-header">
+            <div className="img">
+              <div className="inner-img">
                 <img
-                  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRfaDkQdhg6yji1yDOvvgoizD_Z97VaoJ3hKg&usqp=CAU"
+                  src={profile_pic}
                   alt=""
-                  class="img-profile"
+                  className="img-profile"
                 />
               </div>
             </div>
-            <div class="desc">
+            <div className="desc">
               <h3>{username}</h3>
               <h5>{job_title}</h5>
               <h5>{location}</h5>
               <p>{about}</p>
             </div>
 
-            <div class="buttons">
+            <div className="buttons">
               <a
                 href={`https://github.com/${github}`}
                 target="_blank"
                 rel="noreferrer"
-                class="btn btn-bordered"
+                className="btn btn-bordered"
               >
                 <GitHub />
               </a>
@@ -58,7 +58,7 @@ const MemberItem = ({
                 href={`https://www.linkedin.com/in/${linked_in}`}
                 target="_blank"
                 rel="noreferrer"
-                class="btn btn-bordered"
+                className="btn btn-bordered"
               >
                 <LinkedIn />
               </a>
@@ -66,16 +66,16 @@ const MemberItem = ({
                 href={`mailto:${email}`}
                 target="_blank"
                 rel="noreferrer"
-                class="btn btn-bordered"
+                className="btn btn-bordered"
               >
                 <Email />
               </a>
             </div>
           </div>
 
-          <div class="card-footer">
+          <div className="card-footer">
             <h5>Skills</h5>
-            <a href="#" class="tags">
+            <a href="#" className="tags">
               {skills}
             </a>
           </div>

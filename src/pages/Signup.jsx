@@ -16,6 +16,7 @@ export default function Signup({ authenticate }) {
     about: "",
     github: "",
     linked_in: "",
+    isAdmin: "",
   });
   const {
     email,
@@ -27,6 +28,7 @@ export default function Signup({ authenticate }) {
     about,
     linked_in,
     github,
+    isAdmin,
   } = form;
   const [error, setError] = useState(null);
   const navigate = useNavigate();
@@ -48,6 +50,7 @@ export default function Signup({ authenticate }) {
       about,
       linked_in,
       github,
+      isAdmin,
     };
     signup(credentials).then((res) => {
       if (!res.status) {
@@ -153,6 +156,16 @@ export default function Signup({ authenticate }) {
           value={github}
           onChange={handleInputChange}
           required
+        />
+
+        <label htmlFor="input-isAdmin">Admin Code</label>
+        <input
+          id="input-isAdmin"
+          type="text"
+          name="isAdmin"
+          placeholder="Admin Code"
+          value={isAdmin}
+          onChange={handleInputChange}
         />
 
         <label htmlFor="input-password">Password</label>

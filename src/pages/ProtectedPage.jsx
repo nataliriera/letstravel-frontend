@@ -48,33 +48,43 @@ const ProtectedPage = (props) => {
     grade0: "#e5e5e5",
   };
   return !isedit ? (
+
+    
     <>
+    
+    
       <div className="member-app">
-        <div class="container">
-          <div class="user-box">
-            <div class="card-header">
-              <div class="img">
-                <div class="inner-img">
+        <div className="container">
+          <div className="user-box">
+            <div className="card-header">
+            {props.user.isAdmin ? 
+    
+    <h3>You're an Admin</h3>
+    :
+    <p></p>
+  }
+              <div className="img">
+                <div className="inner-img">
                   <img
                     src={props.user.profile_pic}
                     alt=""
-                    class="img-profile"
+                    className="img-profile"
                   />
                 </div>
               </div>
-              <div class="desc">
+              <div className="desc">
                 <h3>{props.user.username}</h3>
                 <h5>{props.user.job_title}</h5>
                 <h5>{props.user.location}</h5>
                 <p>{props.user.about}</p>
               </div>
 
-              <div class="buttons">
+              <div className="buttons">
                 <a
                   href={`https://github.com/${props.user.github}`}
                   target="_blank"
                   rel="noreferrer"
-                  class="btn btn-bordered"
+                  className="btn btn-bordered"
                 >
                   <GitHub />
                 </a>
@@ -83,16 +93,16 @@ const ProtectedPage = (props) => {
                   href={`https://www.linkedin.com/in/${props.user.linked_in}`}
                   target="_blank"
                   rel="noreferrer"
-                  class="btn btn-bordered"
+                  className="btn btn-bordered"
                 >
                   <LinkedIn />
                 </a>
               </div>
             </div>
 
-            <div class="card-footer">
+            <div className="card-footer">
               <h5>Skills</h5>
-              <a href="#" class="tags">
+              <a href="#" className="tags">
                 {props.user.skills}
               </a>
             </div>

@@ -12,7 +12,6 @@ const NewsList = () => {
         `https://newsdata.io/api/1/news?apikey=pub_58050cce056db297b7d89b4a8bbafd53b670&q=tech `
       );
       setArticles(response.data.results);
-      console.log(response.data.results);
 
     };
 

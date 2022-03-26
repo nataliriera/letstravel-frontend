@@ -28,7 +28,7 @@ const NewsItem = ({
             {title}
           </Typography>
 
-          <Typography variant="subtitle1" color="text.secondary">
+          <Typography variant="subtitle1" >
             {description}
           </Typography>
         </CardContent>
@@ -37,10 +37,10 @@ const NewsItem = ({
           <a href={link} target="_blank">
             <Button size="small">Learn More</Button>
           </a>
-          <Typography variant="body1" color="text.secondary">
+          <Typography variant="body1" >
             Source: {source_id}
           </Typography>
-          <Typography variant="body2" color="text.secondary">
+          <Typography variant="body2" >
             Published: {pubDate}
           </Typography>
         </CardActions>

@@ -4,6 +4,8 @@ import landing from "../assets/landing.jpg";
 
 function HomePage() {
   return (
+
+   
     <div className="App">
       <section className="landingpage">
         <div className="landing-left">

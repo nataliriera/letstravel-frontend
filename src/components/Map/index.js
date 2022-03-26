@@ -19,11 +19,13 @@ function PinMap() {
   const [currentPlaceId, setCurrentPlaceId] = useState(null);
   const [pins, setPins] = useState([]);
 
+  
+
+   
   useEffect(() => {
     const getData = async () => {
       const response = await getpin();
       setPins(response.data);
-      console.log(response.data);
     };
 
     getData();
@@ -88,6 +90,8 @@ function PinMap() {
             );
           })}
         </Map>
+
+       
         <>
           <div className="all-cards">
             <a href="/createevent">
@@ -107,6 +111,7 @@ function PinMap() {
                         <br />
                         <label>{pin.date}</label>
                         <p>From: {pin.time}</p>
+                        {/* <button>Delete Event</button> */}
                       </div>
                     </>
                   }
@@ -115,6 +120,7 @@ function PinMap() {
             })}
           </div>
         </>
+    
       </div>
     </>
   );
