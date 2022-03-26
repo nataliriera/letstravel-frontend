@@ -9,32 +9,32 @@ const NewsList = () => {
   useEffect(() => {
     const getArticles = async () => {
       const response = await axios.get(
-        `https://newsapi.org/v2/top-headlines?country=us&category=technology&apiKey=1256a0d06a484858ab7307c5d3342b41`
+        `https://newsdata.io/api/1/news?apikey=pub_58050cce056db297b7d89b4a8bbafd53b670&q=tech `
       );
-      setArticles(response.data.articles);
-      console.log(response);
+      setArticles(response.data.results);
+      console.log(response.data.results);
+
     };
 
     getArticles();
   }, []);
   return (
-    <div class="news-list-outer-div">
-      <div class="news-list">
+    <div className="news-list-outer-div">
+      <div className="news-list">
         {articles.map((article) => {
           return (
             <NewsItem
               title={article.title}
               description={article.description}
-              url={article.url}
-              urlToImage={article.urlToImage}
-              author={article.author}
-              publishedAt={article.publishedAt}
+              link={article.link}
+              source_id={article.source_id}
+              pubDate={article.pubDate}
             />
-          );
-        })}
+         );
+       })}
       </div>
       <a href="#demo">
-        <div class="box">
+        <div className="box">
           <span></span>
           <span></span>
           <span></span>

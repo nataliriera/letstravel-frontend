@@ -4,7 +4,6 @@ import {
   Card,
   CardActions,
   CardContent,
-  CardMedia,
   Button,
   Typography,
 } from "@material-ui/core";
@@ -12,10 +11,9 @@ import {
 const NewsItem = ({
   title,
   description,
-  url,
-  urlToImage,
-  author,
-  publishedAt,
+  link,
+  source_id,
+  pubDate,
 }) => {
   return (
     <div className="news-app">
@@ -24,12 +22,6 @@ const NewsItem = ({
         sx={{ maxWidth: 345 }}
         style={{ backgroundColor: "#1E1E1E" }}
       >
-        <CardMedia
-          className="news-img"
-          component="img"
-          alt={urlToImage}
-          image={urlToImage}
-        />
 
         <CardContent className="news-content">
           <Typography gutterBottom variant="h4" component="div">
@@ -42,14 +34,14 @@ const NewsItem = ({
         </CardContent>
 
         <CardActions className="news-actions">
-          <a href={url} target="_blank">
+          <a href={link} target="_blank">
             <Button size="small">Learn More</Button>
           </a>
           <Typography variant="body1" color="text.secondary">
-            Author: {author}
+            Source: {source_id}
           </Typography>
           <Typography variant="body2" color="text.secondary">
-            Published: {publishedAt}
+            Published: {pubDate}
           </Typography>
         </CardActions>
       </Card>
